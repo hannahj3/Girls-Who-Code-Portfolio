@@ -1,0 +1,40 @@
+start = '''your plane crashed and you as the sole survivor have landed on an island.
+You can either wait to hopefully get rescued or you can take initiative and leave the island.
+type leave to leave the island and stay to stay on the island'''
+
+def Begin():
+
+    print(start)
+
+    user_input = input()
+
+    if user_input == "leave":
+        print("You decide to leave the island. You can either swim or build a boat. Type boat to build a boat or swim to swim off the island.")
+        user_input = input()
+        if user_input == "swim":
+            print('''you decide to swim off of the island. You encounter
+                    a shark and it attacks you. you die.''')
+        elif user_input == "boat":
+            print('''you decide to build a boat. You use some coconut husks and after three days
+                    you have finally built a boat that does not sink. you leave the island. You see a
+                    cruise ship in the distance. You also see land. type ship or land.''')
+            user_input = input()
+            if user_input == "land":
+                Begin()
+            elif user_input == "ship":
+                print('''Congratulations you have been rescued''')
+
+
+    elif user_input == "stay":
+        print('''You decide to stay on the island and wait to be rescued
+        you see some sticks. You can either use them to build a fire
+        or sharpen them and catch fish. type 'fire' to use the sticks
+        as firewood or 'fish' to use them as fishing tools.''')
+        user_input = input()
+        if user_input == "fire":
+            print('''you build a fire with the sticks you found. A plane sees the fire and rescues you.''')
+        elif user_input == "fish":
+            print('''You use the sticks to catch some fish.
+            you eat them and get a fatal case of dysentery and die''')
+
+Begin()
